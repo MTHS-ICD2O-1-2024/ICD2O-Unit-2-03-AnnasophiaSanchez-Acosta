@@ -33,7 +33,7 @@
       href="./favicon-16x16.png"
     />
     <link rel="manifest" href="./site.webmanifest" />
-    <title>The math program, JS.</title>
+    <title>The street number & name program, JS.</title>
   </head>
 
   <body>
@@ -42,14 +42,40 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">The math program,JS</span>
+          <span class="mdl-layout-title">The street number & name program,JS</span>
         </div>
       </header>
       <main class="mdl-layout__content">
         <div class="right-image">
           <img src="./images/street.jpg" alt="Laptop image" />
         </div>
-        <html></html>
+        <div class="page-content"><h5>Please enter the following:</h5></div>
+        <br />
+        <form>
+          <!-- Simple Textfield -->
+          <p>Street name</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="first-name">
+            <label class="mdl-textfield__label" for="sample1">Name here ...</label>
+          </div>
+          <!-- Numeric Textfield -->
+          <p>Street number</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="age-entered">
+            <label class="mdl-textfield__label" for="age-entered">Number here ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <br />
+          <!-- Raised button with ripple -->
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            onclick="enterClicked()" type="button">
+            Enter
+          </button>
+        </form>
+        <br />
+        <div class="page-content-answer">
+          <div id="user-info"></div>
+        </div>
       </main>
     </div>
   </body>
